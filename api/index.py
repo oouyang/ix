@@ -7,7 +7,8 @@ app = Flask(__name__)
 def ix():
   l=request.args.get('l')
   c=request.args.get('c')
-  return '%d-%d'%(l,c)
+  ret = '%d-%d'%(l,c)
+  return 'test'
 
 @app.route('/')
 def home():
