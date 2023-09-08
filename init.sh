@@ -1,4 +1,4 @@
-pk add --update --no-cache bash git openssh-client yarn
+apk add --update --no-cache bash git openssh-client yarn
 mkdir ~/.ssh && touch ~/.ssh/id_rsa && chmod 600 ~/.ssh/id_rsa
 ssh-keyscan -H github.com >> ~/.ssh/known_hosts
 yarn global add vercel
