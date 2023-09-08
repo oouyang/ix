@@ -4,6 +4,7 @@ import os,sys,json
 pdir = os.path.dirname(os.path.realpath(__file__))
 pdir = os.path.dirname(pdir)
 sys.path.append(pdir)
+
 from app import getChapter
 
 #x = getChapter(317,66236)
@@ -18,7 +19,7 @@ def ix(l,c):
   #ret = '%d-%d'%(l,c)
   return '<pre>'+'\n'.join(getChapter(c,l))+'</pre>'
 
-@app.route('api/l/<int:l>/c/<int:c>')
+@app.route('/api/l/<int:l>/c/<int:c>')
 def ixapi(l,c):
   return json.dumps(getChapter(c,l))
 
