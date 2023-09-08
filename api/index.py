@@ -4,9 +4,9 @@ app = Flask(__name__)
 
 
 @app.route('/l/<string:l>/c/<string:c>')
-def ix():
-  l=request.args.get('l')
-  c=request.args.get('c')
+def ix(l,c):
+  #l=request.args.get('l')
+  #c=request.args.get('c')
   ret = '%d-%d'%(l,c)
   return 'test'
 
