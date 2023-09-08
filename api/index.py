@@ -16,7 +16,7 @@ def ix(l,c):
   #l=request.args.get('l')
   #c=request.args.get('c')
   #ret = '%d-%d'%(l,c)
-  return '\n'.join(getChapter(c,l))
+  return '<pre>'+'\n'.join(getChapter(c,l))+'</pre>'
 
 @app.route('/')
 def home():
