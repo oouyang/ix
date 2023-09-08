@@ -5,7 +5,7 @@ pdir = os.path.dirname(os.path.realpath(__file__))
 pdir = os.path.dirname(pdir)
 sys.path.append(pdir)
 
-from app import getChapter
+from app import getChapter, getCList
 
 #x = getChapter(317,66236)
 
@@ -22,6 +22,10 @@ def ix(l,c):
 @app.route('/api/l/<int:l>/c/<int:c>')
 def ixapi(l,c):
   return json.dumps(getChapter(c,l))
+
+@app.route('/api/l/<int:l>')
+def ixl(l):
+  return getCList(l)
 
 @app.route('/')
 def home():
