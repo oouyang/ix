@@ -1,14 +1,22 @@
 from flask import Flask
+import os,sys
+
+pdir = os.path.dirname(os.path.realpath(__file__))
+pdir = os.path.dirname(pdir)
+sys.path.append(pdir)
+from app import getChapter
+
+#x = getChapter(317,66236)
 
 app = Flask(__name__)
 
 
-@app.route('/l/<string:l>/c/<string:c>')
+@app.route('/l/<int:l>/c/<int:c>')
 def ix(l,c):
   #l=request.args.get('l')
   #c=request.args.get('c')
-  ret = '%s-%s'%(l,c)
-  return 'test'
+  #ret = '%d-%d'%(l,c)
+  return '\n'.join(getChapter(c,l))
 
 @app.route('/')
 def home():

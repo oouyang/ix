@@ -10,5 +10,5 @@ def httpget(u):
 def getChapter(c, bid):
     url = bu + '/read/%d/p%d.html' % (bid, c)
     text = httpget(url)
-    soup = bs4.BeautifulSoup(text)
+    soup = bs4.BeautifulSoup(text,features="html.parser")
     return [i.get_text() for i in soup.select('section p')]
