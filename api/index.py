@@ -1,5 +1,5 @@
 from flask import Flask
-import os,sys
+import os,sys,json
 
 pdir = os.path.dirname(os.path.realpath(__file__))
 pdir = os.path.dirname(pdir)
@@ -17,6 +17,10 @@ def ix(l,c):
   #c=request.args.get('c')
   #ret = '%d-%d'%(l,c)
   return '<pre>'+'\n'.join(getChapter(c,l))+'</pre>'
+
+@app.route('api/l/<int:l>/c/<int:c>')
+def ixapi(l,c):
+  return json.dumps(getChapter(c,l))
 
 @app.route('/')
 def home():
