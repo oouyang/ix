@@ -17,7 +17,11 @@ def ix(l,c):
   #l=request.args.get('l')
   #c=request.args.get('c')
   #ret = '%d-%d'%(l,c)
-  return '<pre>'+'\n'.join(getChapter(c,l))+'</pre>'
+  lst = getCList(l)
+  n = len(lst)
+  nav = ('' if c == 0 else ('<a href=\'/l/%d/c/%d\'>prev</a>' % (l, c-1)) ) + ' ' + ('' if c == n-1 else ('<a href=\'/l/%d/c/%d\'>next</a>' % (l, c+1)))
+nav
+  return nav + '<br /><pre>'+'\n'.join(getChapter(c,l))+'</pre><br />' + nav
 
 @app.route('/api/l/<int:l>/c/<int:c>')
 def ixapi(l,c):
