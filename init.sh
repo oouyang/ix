@@ -12,3 +12,4 @@ git config --global user.name "Your Name"
 # git commit 
 # git push
 #  vercel deploy --prod
+echo done
