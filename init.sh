@@ -5,8 +5,8 @@ yarn global add vercel
 # git clone git@github.com:oouyang/ix.git
 # cd ix
 mkdir .vercel && touch .vercel/project.json
-git config --global user.email "you@example.com"
-git config --global user.name "Your Name"
+git config --global user.email "oouyang@github.com"
+git config --global user.name "oouyang"
 
 # git add
 # git commit 
