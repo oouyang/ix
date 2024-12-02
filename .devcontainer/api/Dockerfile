@@ -2,8 +2,6 @@
 ARG VARIANT=3-bullseye
 FROM mcr.microsoft.com/vscode/devcontainers/python:${VARIANT}
 
-#RUN  wget -qO- -Yoff http://pki.micron.com/pki/Micron%20Technology%20Root%20CA.crt | openssl x509 -inform der -out /usr/local/share/ca-certificates/Micron_Root_CA.crt && \
-#wget -qO- -Yoff http://pki.micron.com/pki/Micron%20Technology%20Issuing%20CA.crt | openssl x509 -inform der -out /usr/local/share/ca-certificates/Micron_Issuing_CA.crt && \
 #update-ca-certificates
 # Add python pip certificate location
 RUN echo '[global] \n\
