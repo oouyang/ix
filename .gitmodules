@@ -1,0 +1,3 @@
+[submodule "ix"]
+	path = ix
+	url = git@github.com:alaska-icy-giant/ix.git

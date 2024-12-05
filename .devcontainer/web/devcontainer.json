@@ -1,0 +1,38 @@
+{
+  "name": "ix",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": "."
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+    "ghcr.io/devcontainers-contrib/features/pre-commit:2": {}
+  },
+  "forwardPorts": [
+   8080 
+  ],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "Vue.volar",
+        "esbenp.prettier-vscode",
+        "antfu.goto-alias",
+        "ms-playwright.playwright",
+        "ms-azuretools.vscode-docker",
+        "streetsidesoftware.code-spell-checker",
+        "ms-azuretools.vscode-docker",
+        "Gruntfuggly.todo-tree"
+      ],
+      "settings": {
+        "http.proxy1": "http://proxy.microsoft.com",
+        "http.proxyStrictSSL1": false
+      }
+    }
+  },
+  "containerEnv": {
+    "REQUESTS_CA_BUNDLE": "/etc/ssl/certs/ca-certificates.crt",
+    "NODE_EXTRA_CA_CERTS": "/etc/ssl/certs/ca-certificates.crt",
+    "OPENSSL_CONF": "/home/node/dotfiles/openssl.cnf"
+  },
+  "remoteUser": "node"
+}
